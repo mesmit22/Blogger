@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div style="background-image: url('../../Images/bg_beer.jpg')" class="jumbotron">
+        <h1 style="color: antiquewhite">Welcome to GitDrunk!</h1>
+        <p style="color: antiquewhite" class="lead">Here we be bloggin <br> bout groggin.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Blog</h2>
+        <p>Leave a blog about a bar you visited.</p>
+        <p>@Html.ActionLink("Write", "Create", "Blogs")</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Details</h2>
+        <p>Find a bar</p>
+        <p>@Html.ActionLink("Review a ", "Index", "Blogs")</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Donate</h2>
+        <p>We are thirsty.</p>
+        <p>@Html.ActionLink("Donate", "#")</p>
+    </div>
+</div>

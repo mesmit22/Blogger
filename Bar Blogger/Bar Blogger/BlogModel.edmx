@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GitDrunkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="Blog_ID" />
+          </Key>
+          <Property Name="Blog_Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Blog_Author" Type="nvarchar" MaxLength="20" />
+          <Property Name="Blog_Content" Type="nvarchar" MaxLength="300" />
+          <Property Name="Blog_Date" Type="date" />
+          <Property Name="Blog_Rating" Type="int" />
+          <Property Name="Blog_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Blog_Location" Type="nvarchar" MaxLength="255" />
+          <Property Name="Blog_City" Type="nvarchar" MaxLength="255" />
+          <Property Name="Blog_State" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <EntityContainer Name="GitDrunkModelStoreContainer">
+          <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GitDrunkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="Blog_ID" />
+          </Key>
+          <Property Name="Blog_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Blog_Author" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Blog_Content" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Blog_Date" Type="DateTime" Precision="0" />
+          <Property Name="Blog_Rating" Type="Int32" />
+          <Property Name="Blog_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Blog_Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Blog_City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Blog_State" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="GitDrunkEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Blogs" EntityType="Self.Blog" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GitDrunkModelStoreContainer" CdmEntityContainer="GitDrunkEntities">
+          <EntitySetMapping Name="Blogs">
+            <EntityTypeMapping TypeName="GitDrunkModel.Blog">
+              <MappingFragment StoreEntitySet="Blog">
+                <ScalarProperty Name="Blog_Title" ColumnName="Blog_Title" />
+                <ScalarProperty Name="Blog_Author" ColumnName="Blog_Author" />
+                <ScalarProperty Name="Blog_Content" ColumnName="Blog_Content" />
+                <ScalarProperty Name="Blog_Date" ColumnName="Blog_Date" />
+                <ScalarProperty Name="Blog_Rating" ColumnName="Blog_Rating" />
+                <ScalarProperty Name="Blog_ID" ColumnName="Blog_ID" />
+                <ScalarProperty Name="Blog_Location" ColumnName="Blog_Location" />
+                <ScalarProperty Name="Blog_City" ColumnName="Blog_City" />
+                <ScalarProperty Name="Blog_State" ColumnName="Blog_State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

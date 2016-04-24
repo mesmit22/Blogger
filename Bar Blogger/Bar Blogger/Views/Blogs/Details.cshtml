@@ -1,0 +1,82 @@
+﻿@model Bar_Blogger.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Blog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Blog_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blog_Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Blog_Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blog_Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Blog_Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blog_Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Blog_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blog_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Blog_Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blog_Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Blog_Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blog_Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Blog_City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blog_City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Blog_State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Blog_State)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Blog_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
