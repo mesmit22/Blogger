@@ -4,72 +4,90 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Blogs</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Blog_Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Blog_Author)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Blog_Content)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Blog_Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Blog_Rating)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Blog_Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Blog_City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Blog_State)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Blog_Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Blog_Author)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Blog_Content)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Blog_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Blog_Rating)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Blog_Location)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Blog_City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Blog_State)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Blog_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Blog_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Blog_ID })
-        </td>
-    </tr>
+@foreach (var bar in Model)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @Html.DisplayFor(modelItem => bar.Blog_Title) | <span class="author">@Html.DisplayFor(modelItem => bar.Blog_Author)</span>
+            <span class="pull-right">@Html.ActionLink("Details", "Details", new { id = bar.Blog_ID }, new { @class = "btn btn-default detail-btn glyphicon glyphicon-glass" })</span> @*<button class="btn btn-default pull-right glyphicon glyphicon-glass detail-btn"></button>*@
+        </div>
+        <div class="panel-body">
+            <p>@Html.DisplayFor(modelItem => bar.Blog_Content)</p>
+        </div>
+    </div>
 }
 
-</table>
+<p>
+    @Html.ActionLink("Add New Blog", "Create")
+</p>
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Blog_Title)
+                Bar Name
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Blog_Author)
+                Author
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Blog_Content)
+                What they said
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Blog_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Blog_Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Blog_Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Blog_City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Blog_State)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <h1>@Html.DisplayFor(modelItem => item.Blog_Title)</h1>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Blog_Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Blog_Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Blog_Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Blog_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Blog_Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Blog_Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Blog_City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Blog_State)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Blog_ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Blog_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Blog_ID })
+            </td>
+        </tr>
+    }
+
+    </table>*@
