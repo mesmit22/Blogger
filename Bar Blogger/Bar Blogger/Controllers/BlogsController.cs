@@ -45,6 +45,7 @@ namespace Bar_Blogger.Controllers
         // POST: Blogs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Blog_Title,Blog_Author,Blog_Content,Blog_Date,Blog_Rating,Blog_ID,Blog_Location,Blog_City,Blog_State")] Blog blog)
@@ -58,7 +59,7 @@ namespace Bar_Blogger.Controllers
 
             return View(blog);
         }
-
+        [Authorize]
         // GET: Blogs/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -77,6 +78,7 @@ namespace Bar_Blogger.Controllers
         // POST: Blogs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Blog_Title,Blog_Author,Blog_Content,Blog_Date,Blog_Rating,Blog_ID,Blog_Location,Blog_City,Blog_State")] Blog blog)
@@ -90,6 +92,7 @@ namespace Bar_Blogger.Controllers
             return View(blog);
         }
 
+        [Authorize]
         // GET: Blogs/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -106,6 +109,7 @@ namespace Bar_Blogger.Controllers
         }
 
         // POST: Blogs/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
