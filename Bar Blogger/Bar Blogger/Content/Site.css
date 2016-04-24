@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.author {
+    font-size: 8px;
+}
+.detail-btn {
+    margin-top: -8px;
+    margin-right: -13px;
+}
