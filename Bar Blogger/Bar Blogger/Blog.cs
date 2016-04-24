@@ -11,12 +11,15 @@ namespace Bar_Blogger
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Blog
     {
         public string Blog_Title { get; set; }
         public string Blog_Author { get; set; }
         public string Blog_Content { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> Blog_Date { get; set; }
         public Nullable<int> Blog_Rating { get; set; }
         public int Blog_ID { get; set; }

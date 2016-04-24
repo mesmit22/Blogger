@@ -36,7 +36,7 @@ namespace Bar_Blogger.Controllers
         }
 
         // GET: Blogs/Create
-        [Authorize]
+        //[Authorize]
         public ActionResult Create()
         {
             return View();
@@ -45,7 +45,7 @@ namespace Bar_Blogger.Controllers
         // POST: Blogs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Blog_Title,Blog_Author,Blog_Content,Blog_Date,Blog_Rating,Blog_ID,Blog_Location,Blog_City,Blog_State")] Blog blog)
