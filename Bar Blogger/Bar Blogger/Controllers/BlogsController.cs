@@ -36,6 +36,7 @@ namespace Bar_Blogger.Controllers
         }
 
         // GET: Blogs/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
