@@ -1,4 +1,4 @@
-﻿@model Bar_Blogger.Blog
+﻿@model IEnumerable<Bar_Blogger.Blog>
 
 @{
     ViewBag.Title = "Home Page";
@@ -26,7 +26,7 @@
         <h2>Details</h2>
         <p>Find a bar</p>
         <p>@Html.ActionLink("Review a Bar", "Index", "Blogs", new { area = "" }, new { @class = "btn-primary btn-lg" })</p>
-        @*@foreach (var bar in Model)
+        @foreach (var bar in Model)
             {
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -36,6 +36,6 @@
                         <p>@Html.DisplayFor(modelItem => bar.Blog_Content)</p>
                     </div>
                 </div>
-            }*@
+            }
     </div>
 </div>

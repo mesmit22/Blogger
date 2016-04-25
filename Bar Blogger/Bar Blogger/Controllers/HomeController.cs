@@ -8,9 +8,11 @@ namespace Bar_Blogger.Controllers
 {
     public class HomeController : Controller
     {
+        private GitDrunkEntities db = new GitDrunkEntities();
+
         public ActionResult Index()
         {
-            return View();
+            return View(db.Blogs.ToList());
         }
 
         public ActionResult About()
