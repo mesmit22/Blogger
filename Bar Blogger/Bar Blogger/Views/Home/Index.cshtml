@@ -9,33 +9,37 @@
         <p style="color: antiquewhite" class="lead">Here we be bloggin <br> bout groggin.</p>
 </div>
 
+
 <div class="row">
-    <div class="col-md-6">
-        <h2>Blog</h2>
-        <p>Leave a blog about a bar you visited.</p>
-        <p>@Html.ActionLink("Write", "Create", "Blogs", new { area = "" }, new { @class = "btn-primary btn-lg" })</p>
-    </div>
-    <div class="col-md-6">
-        <h2>Donate</h2>
-        <p>We are thirsty.</p>
-        <p>@Html.ActionLink("Donate", "#", new { area = "" }, new { @class = "btn-primary btn-lg" })</p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Details</h2>
-        <p>Find a bar</p>
-        <p>@Html.ActionLink("Review a Bar", "Index", "Blogs", new { area = "" }, new { @class = "btn-primary btn-lg" })</p>
-        @foreach (var bar in Model)
-            {
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        @Html.DisplayFor(modelItem => bar.Blog_Title)
-                    </div>
-                    <div class="panel-body">
-                        <p>@Html.DisplayFor(modelItem => bar.Blog_Content)</p>
-                    </div>
+    <h2>Reviews</h2>
+        
+    @foreach (var bar in Model)
+    {
+        <div class="col-xs-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    @Html.DisplayFor(modelItem => bar.Blog_Title) | <span class="author">@Html.DisplayFor(modelItem => bar.Blog_Author)</span>
+                    <span class="pull-right">@Html.ActionLink("Details", "Details", new { id = bar.Blog_ID }, new { @class = "btn btn-default detail-btn glyphicon glyphicon-glass" })</span> @*<button class="btn btn-default pull-right glyphicon glyphicon-glass detail-btn"></button>*@
                 </div>
-            }
+                <div class="panel-body">
+                    <p>@Html.DisplayFor(modelItem => bar.Blog_Content)</p>
+                </div>
+            </div>
+        </div>
+    }
+    <p>@Html.ActionLink("Browse All Reviews", "Index", "Blogs", new { area = "" }, new { @class = "btn-warning btn-lg" })</p>
+
+</div>
+
+<div class="row">
+    <div class="col-xs-6">
+        <h2>Blog</h2>
+        <p>Be bloggin 'bout your groggin.</p>
+        <p>@Html.ActionLink("Write", "Create", "Blogs", new { area = "" }, new { @class = "btn-warning btn-lg" })</p>
+    </div>
+    <div class="col-xs-6">
+        <h2>Donate</h2>
+        <p>We want to drink too.</p>
+        <p>@Html.ActionLink("Donate", "#", new { area = "" }, new { @class = "btn-warning btn-lg" })</p>
     </div>
 </div>

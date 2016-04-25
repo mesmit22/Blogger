@@ -12,7 +12,7 @@ namespace Bar_Blogger.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Blogs.ToList());
+            return View(db.Blogs.Take(3).ToList());
         }
 
         public ActionResult About()
