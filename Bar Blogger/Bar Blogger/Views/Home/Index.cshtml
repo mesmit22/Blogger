@@ -19,7 +19,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     @Html.DisplayFor(modelItem => bar.Blog_Title) | <span class="author">@Html.DisplayFor(modelItem => bar.Blog_Author)</span>
-                    <span class="pull-right">@Html.ActionLink("Details", "Details", new { id = bar.Blog_ID }, new { @class = "btn btn-default detail-btn glyphicon glyphicon-glass" })</span> @*<button class="btn btn-default pull-right glyphicon glyphicon-glass detail-btn"></button>*@
+                    <span class="pull-right">@Html.ActionLink("Details", "Details", "Blogs", new { id = bar.Blog_ID }, new { @class = "btn btn-default detail-btn glyphicon glyphicon-glass" })</span> @*<button class="btn btn-default pull-right glyphicon glyphicon-glass detail-btn"></button>*@
                 </div>
                 <div class="panel-body">
                     <p>@Html.DisplayFor(modelItem => bar.Blog_Content)</p>

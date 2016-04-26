@@ -17,7 +17,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             Title
-            <div class="col-md-10">
+            <div>
                 @Html.EditorFor(model => model.Blog_Title, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Blog_Title, "", new { @class = "text-danger" })
             </div>
@@ -25,7 +25,7 @@
 
         <div class="form-group">
             Author
-            <div class="col-md-10">
+            <div>
                 @Html.EditorFor(model => model.Blog_Author, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Blog_Author, "", new { @class = "text-danger" })
             </div>
@@ -33,7 +33,7 @@
 
         <div class="form-group">
             Review
-            <div class="col-md-10">
+            <div>
                 @Html.EditorFor(model => model.Blog_Content, new { htmlAttributes = new { @class = "form-control", rows = "5" } })
                 @Html.ValidationMessageFor(model => model.Blog_Content, "", new { @class = "text-danger" })
             </div>
@@ -41,7 +41,7 @@
 
         <div class="form-group">
             Date
-            <div class="col-md-10">
+            <div>
                 @Html.EditorFor(model => model.Blog_Date, new { htmlAttributes = new { @class = "form-control datepicker" } })
                 @Html.ValidationMessageFor(model => model.Blog_Date, "", new { @class = "text-danger" })
             </div>
@@ -49,7 +49,7 @@
 
         <div class="form-group">
             Rating
-            <div class="col-md-10">
+            <div>
                 @Html.EditorFor(model => model.Blog_Rating, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Blog_Rating, "", new { @class = "text-danger" })
             </div>
@@ -57,7 +57,7 @@
 
         <div class="form-group">
             Location
-            <div class="col-md-10">
+            <div>
                 @Html.EditorFor(model => model.Blog_Location, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Blog_Location, "", new { @class = "text-danger" })
             </div>
@@ -65,7 +65,7 @@
 
         <div class="form-group">
             City
-            <div class="col-md-10">
+            <div>
                 @Html.EditorFor(model => model.Blog_City, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Blog_City, "", new { @class = "text-danger" })
             </div>
@@ -73,7 +73,7 @@
 
         <div class="form-group">
             State
-            <div class="col-md-10">
+            <div>
                 @Html.EditorFor(model => model.Blog_State, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Blog_State, "", new { @class = "text-danger" })
             </div>
